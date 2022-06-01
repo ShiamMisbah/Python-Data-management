@@ -42,6 +42,21 @@ def alphaSort(s):
     for i in l:
         print (i)     
 
-alphaSort(" method returns the lowercase string from the given string. It converts all uppercase characters to lowercase. If no uppercase characters exist, it returns the original string.")
+# alphaSort(" method returns the lowercase string from the given string. It converts all uppercase characters to lowercase. If no uppercase characters exist, it returns the original string.")
             
-        
+def sortByVowels(s):
+    l = s.lower().split(" ")
+    def vowelCount(st):
+        count = 0
+        li = ["a", "e", "i", "o", "u"]
+        for i in st:
+            if i in li:
+                count +=1
+        return count
+    ln = sorted(l, key=vowelCount,reverse=True)
+    
+    return ln
+
+print(sortByVowels("method returns the lowercase string from the given string. It converts all uppercase characters to lowercase. If no uppercase characters exist, it returns the original string."))
+
+
